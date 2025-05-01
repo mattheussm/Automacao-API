@@ -1,34 +1,35 @@
-name: Robot Framework API Tests
+name: Run API Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Clonar o repositório
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4  
 
-      - name: Instalar Python
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install robotframework
+          pip install requests
 
-      - name: Rodar testes Robot
+      - name: Run tests
         run: |
-          robot -d results tests
+          robot -d results --log none --report none tests/
 
-      - name: Upload dos relatórios
-        uses: actions/upload-artifact@v3
+      - name: Upload results
+        uses: actions/upload-artifact@v4  
         with:
-          name: Relatorios-Robot
-          path: results
+          name: test-results
+          path: results/
