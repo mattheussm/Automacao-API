@@ -24,7 +24,9 @@ Projeto de automação de testes para APIs REST, com foco em boas práticas de Q
 ## 🔧 Próximas Implementações (Roadmap)
 
 - [ ] Testes para métodos POST / PUT / DELETE  
-- [ ] Integração com GitHub Actions (CI/CD)   
+- [ ] Autenticação JWT / OAuth2  
+- [ ] Integração com GitHub Actions (CI/CD)  
+- [ ] Dockerização do ambiente- [ ] Integração com GitHub Actions (CI/CD)   
 
 ---
 
