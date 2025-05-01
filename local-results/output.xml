@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-01T17:49:39.885122" rpa="false" schemaversion="5">
-<suite id="s1" name="Users Tests Api" source="D:\Projetos\automacao-api\tests\users_tests_api.robot">
-<test id="s1-t1" name="Teste GET para lista de usuários" line="7">
+<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-01T19:58:02.147176" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\Projetos\automacao-api\tests">
+<suite id="s1-s1" name="Users Tests Api" source="D:\Projetos\automacao-api\tests\users_tests_api.robot">
+<test id="s1-s1-t1" name="Teste GET para lista de usuários" line="7">
 <kw name="Criar Sessão API" owner="api_keywords">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-01T17:49:40.131673" level="INFO">Creating Session using : alias=json_api, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-05-01T19:58:02.535354" level="INFO">Creating Session using : alias=json_api, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>json_api</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-01T17:49:40.131673" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:02.535354" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-05-01T17:49:40.131673" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:02.524305" elapsed="0.011049"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-01T17:49:40.411945" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/users 
+<msg time="2025-05-01T19:58:03.224819" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-05-01T17:49:40.411945" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/users 
+<msg time="2025-05-01T19:58:03.224819" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/users 
  status=200, reason=OK 
- headers={'Date': 'Thu, 01 May 2025 20:49:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1745352637&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QABEMif%2Bskl1OK0p%2Fr6xYTi0Ul2n29NsRZSqz9YEIgQ%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1745352637&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QABEMif%2Bskl1OK0p%2Fr6xYTi0Ul2n29NsRZSqz9YEIgQ%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1745352673', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"160d-1eMSsxeJRfnVLRBmYJSbCiJZ1qQ"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'Age': '2203', 'Cf-Cache-Status': 'HIT', 'CF-RAY': '9392258e2d1ea535-GRU', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Thu, 01 May 2025 22:58:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1745352637&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QABEMif%2Bskl1OK0p%2Fr6xYTi0Ul2n29NsRZSqz9YEIgQ%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1745352637&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QABEMif%2Bskl1OK0p%2Fr6xYTi0Ul2n29NsRZSqz9YEIgQ%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1745352673', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"160d-1eMSsxeJRfnVLRBmYJSbCiJZ1qQ"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'Age': '9906', 'Cf-Cache-Status': 'HIT', 'CF-RAY': '9392e19bcd94a529-GRU', 'alt-svc': 'h3=":443"; ma=86400'} 
  body=[
   {
     "id": 1,
@@ -255,60 +256,62 @@
   }
 ] 
  </msg>
-<msg time="2025-05-01T17:49:40.411945" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-01T19:58:03.224819" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-01T17:49:40.411945" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-01T19:58:03.226829" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>json_api</arg>
 <arg>${USERS_ENDPOINT}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-01T17:49:40.131673" elapsed="0.280272"/>
+<status status="PASS" start="2025-05-01T19:58:02.535354" elapsed="0.691475"/>
 </kw>
 <kw name="Validar Status Code" owner="api_keywords">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-05-01T17:49:40.424961" level="INFO">Argument types are:
+<msg time="2025-05-01T19:58:03.228840" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${expected_status}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-05-01T17:49:40.411945" elapsed="0.013016"/>
+<status status="PASS" start="2025-05-01T19:58:03.226829" elapsed="0.002011"/>
 </kw>
 <arg>${response}</arg>
-<status status="PASS" start="2025-05-01T17:49:40.411945" elapsed="0.013016"/>
+<status status="PASS" start="2025-05-01T19:58:03.226829" elapsed="0.002011"/>
 </kw>
 <kw name="Extrair Primeiro Usuário" owner="api_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-01T17:49:40.424961" level="INFO">${json} = [{'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {...</msg>
+<msg time="2025-05-01T19:58:03.231841" level="INFO">${json} = [{'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {...</msg>
 <var>${json}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-01T17:49:40.424961" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:03.228840" elapsed="0.003001"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-01T17:49:40.424961" level="INFO">Length is 10.</msg>
+<msg time="2025-05-01T19:58:03.231841" level="INFO">Length is 10.</msg>
 <arg>${json}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-01T17:49:40.424961" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:03.231841" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${json[0]}</value>
-<status status="PASS" start="2025-05-01T17:49:40.424961" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:03.231841" elapsed="0.000000"/>
 </return>
-<msg time="2025-05-01T17:49:40.426969" level="INFO">${primeiro_usuario} = {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'...</msg>
+<msg time="2025-05-01T19:58:03.233852" level="INFO">${primeiro_usuario} = {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'...</msg>
 <var>${primeiro_usuario}</var>
 <arg>${response}</arg>
-<status status="PASS" start="2025-05-01T17:49:40.424961" elapsed="0.002008"/>
+<status status="PASS" start="2025-05-01T19:58:03.228840" elapsed="0.005012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-01T17:49:40.426969" level="INFO">Detalhes do usuário: {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'lat': '-37.3159', 'lng': '81.1496'}}, 'phone': '1-770-736-8031 x56442', 'website': 'hildegard.org', 'company': {'name': 'Romaguera-Crona', 'catchPhrase': 'Multi-layered client-server neural-net', 'bs': 'harness real-time e-markets'}}</msg>
+<msg time="2025-05-01T19:58:03.233852" level="INFO">Detalhes do usuário: {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'lat': '-37.3159', 'lng': '81.1496'}}, 'phone': '1-770-736-8031 x56442', 'website': 'hildegard.org', 'company': {'name': 'Romaguera-Crona', 'catchPhrase': 'Multi-layered client-server neural-net', 'bs': 'harness real-time e-markets'}}</msg>
 <arg>Detalhes do usuário: ${primeiro_usuario}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-01T17:49:40.426969" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-01T19:58:03.233852" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-05-01T17:49:40.131673" elapsed="0.296300"/>
+<status status="PASS" start="2025-05-01T19:58:02.524305" elapsed="0.709547"/>
 </test>
-<status status="PASS" start="2025-05-01T17:49:39.885122" elapsed="0.542851"/>
+<status status="PASS" start="2025-05-01T19:58:02.223846" elapsed="1.010006"/>
+</suite>
+<status status="PASS" start="2025-05-01T19:58:02.160232" elapsed="1.078297"/>
 </suite>
 <statistics>
 <total>
@@ -317,7 +320,8 @@
 <tag>
 </tag>
 <suite>
-<stat name="Users Tests Api" id="s1" pass="1" fail="0" skip="0">Users Tests Api</stat>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Users Tests Api" id="s1-s1" pass="1" fail="0" skip="0">Tests.Users Tests Api</stat>
 </suite>
 </statistics>
 <errors>
