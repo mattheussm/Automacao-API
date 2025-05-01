@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run API Tests (Terminal Output)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "robot",
+            "args": [
+                "--console", "verbose",
+                "--consolewidth", "120",
+                "--output", "NONE",
+                "--report", "NONE",
+                "-d", "results",
+                "-l", "log.html",
+                "tests/"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
