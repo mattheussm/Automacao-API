@@ -1,19 +1,34 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    Collections
+Library    SeleniumLibrary
 
 Resource    ../resources/api_resources.robot
 
 *** Keywords ***
 Criar Sessão API
-    Create Session    json_api    ${BASE_URL}    timeout=${DEFAULT_TIMEOUT}
+    [Documentation]    Cria uma sessão HTTP para a API
+    Create Session    api_session    ${BASE_URL}    timeout=${TIMEOUT}
+    Log    Sessão API criada com sucesso    level=DEBUG
+
+Enviar Requisição GET
+    [Arguments]    ${endpoint}
+    ${response}=    GET On Session    api_session    ${endpoint}
+    RETURN    ${response}
+
+Enviar Requisição POST
+    [Arguments]    ${endpoint}    ${payload}
+    ${response}=    POST On Session    api_session    ${endpoint}    json=${payload}    headers=${HEADERS}
+    RETURN    ${response}
 
 Validar Status Code
-    [Arguments]    ${response}    ${expected_status}=200
+    [Arguments]    ${response}    ${expected_status}
     Should Be Equal As Numbers    ${response.status_code}    ${expected_status}
 
-Extrair Primeiro Usuário
+Validar Resposta POST
     [Arguments]    ${response}
+    Validar Status Code    ${response}    201
     ${json}=    Set Variable    ${response.json()}
-    Should Not Be Empty    ${json}
-    RETURN    ${json[0]}
+    Dictionary Should Contain Key    ${json}    id
+    Log    ID do novo usuário: ${json}[id]    level=INFO
+
