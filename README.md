@@ -23,7 +23,7 @@ Projeto de automação de testes para APIs REST, com foco em boas práticas de Q
 
 ## 🔧 Próximas Implementações (Roadmap)
 
-- [ ] Testes para métodos POST / PUT / DELETE  
+- [ ] Testes para métodos PUT / DELETE  
 - [ ] Autenticação JWT / OAuth2    
 - [ ] Dockerização do ambiente   
 
