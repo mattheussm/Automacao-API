@@ -9,7 +9,7 @@ Projeto de automação de testes para APIs REST, com foco em boas práticas de Q
 
 ## ⚙️ Funcionalidades Atuais
 
-✅ **Testes GET**  
+✅ **Testes GET e POST**  
 - Validação de status code e estrutura JSON  
 - Keywords modulares e reutilizáveis  
 - Relatórios HTML detalhados gerados automaticamente
