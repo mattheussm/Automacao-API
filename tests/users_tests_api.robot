@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../resources/api_resources.robot
-Resource    ../resources/api_endpoints.robot
 Resource    ../resources/api_keywords.robot
 Library     Collections
 Library     OperatingSystem
@@ -23,3 +22,16 @@ Teste POST - Criar Novo Usuario
    Criar Sessão API
     ${response}=    Enviar Requisição POST    ${POST_USERS_ENDPOINT}    ${POST_USER_PAYLOAD}
     Validar Resposta POST    ${response}
+
+Teste PUT - Atualizar Usuario
+    [Documentation]    Testa a atualização de um usuário via PUT
+    [Tags]    regressao    put
+
+    Criar Sessão API
+    &{usuario_atualizado}=    Create Dictionary    name=Leanne Graham    email=Sincere@april.biz.br
+    ${response}=    PUT On Session    api_session    ${PUT_USERS_ENDPOINT}    json=${usuario_atualizado}    headers=${HEADERS}
+
+    Validar Resposta PUT    ${response}
+    Log    Resposta da atualização: ${response.json()}
+
+

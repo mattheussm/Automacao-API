@@ -32,3 +32,16 @@ Validar Resposta POST
     Dictionary Should Contain Key    ${json}    id
     Log    ID do novo usuário: ${json}[id]    level=INFO
 
+Enviar Requisicao PUT
+    [Arguments]    ${payload}    ${endpoint}
+    ${response}=    PUT On Session    api_session    ${endpoint}    json=${payload}    headers=${HEADERS}
+    RETURN    ${response}
+
+Validar Resposta PUT
+    [Arguments]    ${response}
+    Validar Status Code    ${response}    200
+    ${json}=    Set Variable    ${response.json()}
+    Dictionary Should Contain Key    ${json}    id
+
+
+
