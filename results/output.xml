@@ -1,114 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-04T01:28:01.733505" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-18T22:40:05.071907" rpa="false" schemaversion="5">
 <suite id="s1" name="Users Tests Api" source="D:\Projetos\automacao-api\tests\users_tests_api.robot">
-<test id="s1-t1" name="Teste POST - Criar Novo Usuario" line="18">
+<test id="s1-t1" name="Teste PUT - Atualizar Usuario" line="26">
 <kw name="Criar Sessão API" owner="api_keywords">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-04T01:28:02.640181" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-05-18T22:40:05.418770" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>api_session</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-04T01:28:02.639171" elapsed="0.001010"/>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Sessão API criada com sucesso</arg>
 <arg>level=DEBUG</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.641414" elapsed="0.000996"/>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.000000"/>
 </kw>
 <doc>Cria uma sessão HTTP para a API</doc>
-<status status="PASS" start="2025-05-04T01:28:02.636826" elapsed="0.006582"/>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.000000"/>
 </kw>
-<kw name="Enviar Requisição POST" owner="api_keywords">
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-05-04T01:28:02.960313" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/users 
- path_url=/users 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '78'} 
- body=b'{"name": "Test User", "username": "testuser", "email": "testuser@example.com"}' 
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-18T22:40:05.418770" level="INFO">&amp;{usuario_atualizado} = { name=Leanne Graham | email=Sincere@april.biz.br }</msg>
+<var>&amp;{usuario_atualizado}</var>
+<arg>name=Leanne Graham</arg>
+<arg>email=Sincere@april.biz.br</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.000000"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-05-18T22:40:05.963076" level="INFO">PUT Request : url=https://jsonplaceholder.typicode.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"name": "Leanne Graham", "email": "Sincere@april.biz.br"}' 
  </msg>
-<msg time="2025-05-04T01:28:02.960313" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/users 
- status=201, reason=Created 
- headers={'Date': 'Sun, 04 May 2025 04:28:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '98', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1746332881&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=veLpJsAXyIgVWhf0BiguBym6WaMIPYdD8TC4Gw%2B1SHU%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1746332881&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=veLpJsAXyIgVWhf0BiguBym6WaMIPYdD8TC4Gw%2B1SHU%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1746332934', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'https://jsonplaceholder.typicode.com/users/11', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"62-eoypy6QrvhzA8ByM4oVaRTBoKuM"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'CF-RAY': '93a53fbc1a10a52f-GRU', 'alt-svc': 'h3=":443"; ma=86400'} 
+<msg time="2025-05-18T22:40:05.963076" level="INFO">PUT Response : url=https://jsonplaceholder.typicode.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 19 May 2025 01:39:54 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Etag': 'W/"4b-AmrTuhFrK8QWCuVQG4HsbZsClJs"', 'Expires': '-1', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Pragma': 'no-cache', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=XGBPRMMeKm6tInAWEH9mSaxa2OjJM4ZyG6Mgk2YPQXE%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1747618794"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=XGBPRMMeKm6tInAWEH9mSaxa2OjJM4ZyG6Mgk2YPQXE%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1747618794"', 'Server': 'cloudflare', 'Vary': 'Origin, Accept-Encoding', 'Via': '2.0 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1747618819', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '941fe2187b9af617-FOR', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={
-  "name": "Test User",
-  "username": "testuser",
-  "email": "testuser@example.com",
-  "id": 11
+  "name": "Leanne Graham",
+  "email": "Sincere@april.biz.br",
+  "id": 1
 } 
  </msg>
-<msg time="2025-05-04T01:28:02.960313" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-18T22:40:05.963076" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-04T01:28:02.961650" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-05-18T22:40:05.963968" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>api_session</arg>
-<arg>${endpoint}</arg>
-<arg>json=${payload}</arg>
+<arg>${PUT_USERS_ENDPOINT}</arg>
+<arg>json=${usuario_atualizado}</arg>
 <arg>headers=${HEADERS}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.650433" elapsed="0.311217"/>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.545198"/>
 </kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2025-05-04T01:28:02.961650" elapsed="0.000000"/>
-</return>
-<msg time="2025-05-04T01:28:02.962661" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<var>${response}</var>
-<arg>${POST_USERS_ENDPOINT}</arg>
-<arg>${POST_USER_PAYLOAD}</arg>
-<status status="PASS" start="2025-05-04T01:28:02.648919" elapsed="0.313742"/>
-</kw>
-<kw name="Validar Resposta POST" owner="api_keywords">
+<kw name="Validar Resposta PUT" owner="api_keywords">
 <kw name="Validar Status Code" owner="api_keywords">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-05-04T01:28:02.968993" level="INFO">Argument types are:
+<msg time="2025-05-18T22:40:05.965713" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${expected_status}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.967001" elapsed="0.001992"/>
+<status status="PASS" start="2025-05-18T22:40:05.964713" elapsed="0.001000"/>
 </kw>
 <arg>${response}</arg>
-<arg>201</arg>
-<status status="PASS" start="2025-05-04T01:28:02.964991" elapsed="0.004002"/>
+<arg>200</arg>
+<status status="PASS" start="2025-05-18T22:40:05.964713" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-04T01:28:02.970502" level="INFO">${json} = {'name': 'Test User', 'username': 'testuser', 'email': 'testuser@example.com', 'id': 11}</msg>
+<msg time="2025-05-18T22:40:05.966710" level="INFO">${json} = {'name': 'Leanne Graham', 'email': 'Sincere@april.biz.br', 'id': 1}</msg>
 <var>${json}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.968993" elapsed="0.001509"/>
+<status status="PASS" start="2025-05-18T22:40:05.965713" elapsed="0.000997"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json}</arg>
 <arg>id</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.970502" elapsed="0.001369"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-04T01:28:02.971871" level="INFO">ID do novo usuário: 11</msg>
-<arg>ID do novo usuário: ${json}[id]</arg>
-<arg>level=INFO</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-04T01:28:02.971871" elapsed="0.000995"/>
+<status status="PASS" start="2025-05-18T22:40:05.966710" elapsed="0.000000"/>
 </kw>
 <arg>${response}</arg>
-<status status="PASS" start="2025-05-04T01:28:02.963673" elapsed="0.009193"/>
+<status status="PASS" start="2025-05-18T22:40:05.964713" elapsed="0.001997"/>
 </kw>
-<doc>Testa a criação de um usuário via POST</doc>
-<tag>post</tag>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-18T22:40:05.967441" level="INFO">Resposta da atualização: {'name': 'Leanne Graham', 'email': 'Sincere@april.biz.br', 'id': 1}</msg>
+<arg>Resposta da atualização: ${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-18T22:40:05.967441" elapsed="0.000000"/>
+</kw>
+<doc>Testa a atualização de um usuário via PUT</doc>
+<tag>put</tag>
 <tag>regressao</tag>
-<status status="PASS" start="2025-05-04T01:28:02.633312" elapsed="0.339554"/>
+<status status="PASS" start="2025-05-18T22:40:05.418770" elapsed="0.549620"/>
 </test>
-<status status="PASS" start="2025-05-04T01:28:01.736912" elapsed="1.238956"/>
+<status status="PASS" start="2025-05-18T22:40:05.071907" elapsed="0.897763"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">post</stat>
+<stat pass="1" fail="0" skip="0">put</stat>
 <stat pass="1" fail="0" skip="0">regressao</stat>
 </tag>
 <suite>
