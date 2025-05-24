@@ -9,7 +9,7 @@ Projeto de automação de testes para APIs REST, com foco em boas práticas de Q
 
 ## ⚙️ Funcionalidades Atuais
 
-✅ **Testes GET e POST**  
+✅ **Testes GET, POST, PUT e DELETE**  
 - Validação de status code e estrutura JSON  
 - Keywords modulares e reutilizáveis  
 - Relatórios HTML detalhados gerados automaticamente
@@ -22,8 +22,7 @@ Projeto de automação de testes para APIs REST, com foco em boas práticas de Q
 ---
 
 ## 🔧 Próximas Implementações (Roadmap)
-
-- [ ] Testes para métodos PUT / DELETE  
+  
 - [ ] Autenticação JWT / OAuth2    
 - [ ] Dockerização do ambiente   
 
