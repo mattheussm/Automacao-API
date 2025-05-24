@@ -42,3 +42,11 @@ Validar Resposta PUT
     Validar Status Code    ${response}    200
     ${json}=    Set Variable    ${response.json()}
     Dictionary Should Contain Key    ${json}    id
+
+Excluir Usuario
+    ${response}=    DELETE On Session    api_session    ${DELETE_USER_ENDPOINT}    headers=${HEADERS}
+    RETURN    ${response}
+
+Validar Resposta DELETE
+    [Arguments]    ${response}
+    Validar Status Code    ${response}    200

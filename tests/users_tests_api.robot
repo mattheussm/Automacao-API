@@ -24,6 +24,7 @@ Teste POST - Criar Novo Usuario
     Validar Resposta POST    ${response}
 
 Teste PUT - Atualizar Usuario
+# robot -d results -i put tests/users_tests_api.robot
     [Documentation]    Testa a atualização de um usuário via PUT
     [Tags]    regressao    put
 
@@ -33,3 +34,13 @@ Teste PUT - Atualizar Usuario
 
     Validar Resposta PUT    ${response}
     Log    Resposta da atualização: ${response.json()}
+
+Teste DELETE - Remover Usuario
+# robot -d results -i delete tests/users_tests_api.robot
+    [Documentation]    Testa a remoção de um usuário via DELETE
+    [Tags]    regressao    delete
+
+    Criar Sessão API
+    ${response}=    Excluir Usuario
+    Validar Resposta DELETE    ${response}
+    Log    Usuario removido com sucesso: ${response.status_code}
