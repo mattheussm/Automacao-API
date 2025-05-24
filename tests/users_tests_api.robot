@@ -33,5 +33,3 @@ Teste PUT - Atualizar Usuario
 
     Validar Resposta PUT    ${response}
     Log    Resposta da atualização: ${response.json()}
-
-
