@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-23T23:49:55.631596" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-05-23T23:57:44.041494" rpa="false" schemaversion="5">
 <suite id="s1" name="Users Tests Api" source="D:\Projetos\automacao-api\tests\users_tests_api.robot">
-<test id="s1-t1" name="Teste DELETE - Remover Usuario" line="37">
+<test id="s1-t1" name="Teste DELETE - Remover Usuario" line="38">
 <kw name="Criar Sessão API" owner="api_keywords">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-23T23:49:56.091380" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-05-23T23:57:44.474614" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>api_session</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-23T23:49:56.090224" elapsed="0.002153"/>
+<status status="PASS" start="2025-05-23T23:57:44.474614" elapsed="0.001044"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Sessão API criada com sucesso</arg>
 <arg>level=DEBUG</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-23T23:49:56.092377" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-23T23:57:44.475658" elapsed="0.000000"/>
 </kw>
 <doc>Cria uma sessão HTTP para a API</doc>
-<status status="PASS" start="2025-05-23T23:49:56.088891" elapsed="0.003486"/>
+<status status="PASS" start="2025-05-23T23:57:44.473566" elapsed="0.002092"/>
 </kw>
 <kw name="Excluir Usuario" owner="api_keywords">
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2025-05-23T23:49:56.633756" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/users/1 
+<msg time="2025-05-23T23:57:45.078348" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-05-23T23:49:56.633756" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/users/1 
+<msg time="2025-05-23T23:57:45.078348" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/users/1 
  status=200, reason=OK 
- headers={'Date': 'Sat, 24 May 2025 02:49:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Expires': '-1', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Pragma': 'no-cache', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=D2ijl7A%2FdMFnO3t1Qkow%2FNCHiJWaqeGN0MeRcJvR7VU%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1748054979"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=D2ijl7A%2FdMFnO3t1Qkow%2FNCHiJWaqeGN0MeRcJvR7VU%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1748054979"', 'Server': 'cloudflare', 'Vary': 'Origin, Accept-Encoding', 'Via': '2.0 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1748055035', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '94497b26a997ae51-GRU', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sat, 24 May 2025 02:57:28 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Expires': '-1', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Pragma': 'no-cache', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=FNve839uBeB5aM9I9A9RFNuU6v7SdeJfyn%2F8gvNAYcg%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1748055448"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=FNve839uBeB5aM9I9A9RFNuU6v7SdeJfyn%2F8gvNAYcg%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1748055448"', 'Server': 'cloudflare', 'Vary': 'Origin, Accept-Encoding', 'Via': '2.0 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1748055455', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '94498695d8b8f623-FOR', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={} 
  </msg>
-<msg time="2025-05-23T23:49:56.634780" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-23T23:57:45.078348" level="INFO">C:\Users\mths_\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-23T23:49:56.634780" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-23T23:57:45.079938" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>api_session</arg>
 <arg>${DELETE_USER_ENDPOINT}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-23T23:49:56.093443" elapsed="0.542410"/>
+<status status="PASS" start="2025-05-23T23:57:44.476778" elapsed="0.603160"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2025-05-23T23:49:56.635853" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-23T23:57:45.079938" elapsed="0.000000"/>
 </return>
-<msg time="2025-05-23T23:49:56.635853" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-23T23:57:45.080982" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<status status="PASS" start="2025-05-23T23:49:56.093443" elapsed="0.543976"/>
+<status status="PASS" start="2025-05-23T23:57:44.476778" elapsed="0.604204"/>
 </kw>
 <kw name="Validar Resposta DELETE" owner="api_keywords">
 <kw name="Validar Status Code" owner="api_keywords">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-05-23T23:49:56.644155" level="INFO">Argument types are:
+<msg time="2025-05-23T23:57:45.084046" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${expected_status}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-05-23T23:49:56.642108" elapsed="0.003083"/>
+<status status="PASS" start="2025-05-23T23:57:45.083037" elapsed="0.001009"/>
 </kw>
 <arg>${response}</arg>
 <arg>200</arg>
-<status status="PASS" start="2025-05-23T23:49:56.641083" elapsed="0.004108"/>
+<status status="PASS" start="2025-05-23T23:57:45.081989" elapsed="0.003105"/>
 </kw>
 <arg>${response}</arg>
-<status status="PASS" start="2025-05-23T23:49:56.638603" elapsed="0.006588"/>
+<status status="PASS" start="2025-05-23T23:57:45.081989" elapsed="0.003105"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-23T23:49:56.649074" level="INFO">Usuario removido com sucesso: 200</msg>
+<msg time="2025-05-23T23:57:45.087811" level="INFO">Usuario removido com sucesso: 200</msg>
 <arg>Usuario removido com sucesso: ${response.status_code}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-23T23:49:56.646225" elapsed="0.002849"/>
+<status status="PASS" start="2025-05-23T23:57:45.086103" elapsed="0.001708"/>
 </kw>
 <doc>Testa a remoção de um usuário via DELETE</doc>
 <tag>delete</tag>
 <tag>regressao</tag>
-<status status="PASS" start="2025-05-23T23:49:56.087452" elapsed="0.562628"/>
+<status status="PASS" start="2025-05-23T23:57:44.472523" elapsed="0.616348"/>
 </test>
-<status status="PASS" start="2025-05-23T23:49:55.632602" elapsed="1.020000"/>
+<status status="PASS" start="2025-05-23T23:57:44.043510" elapsed="1.047574"/>
 </suite>
 <statistics>
 <total>
