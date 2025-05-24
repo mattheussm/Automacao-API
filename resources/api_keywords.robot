@@ -42,6 +42,3 @@ Validar Resposta PUT
     Validar Status Code    ${response}    200
     ${json}=    Set Variable    ${response.json()}
     Dictionary Should Contain Key    ${json}    id
-
-
-
